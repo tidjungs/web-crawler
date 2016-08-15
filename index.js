@@ -2,7 +2,6 @@ const Hapi = require('hapi')
 const server = new Hapi.Server()
 const request = require('request')
 const cheerio = require('cheerio')
-const URL = 'https://play.google.com/store/apps/details?id=';
 
 server.connection({
 	host: 'localhost',
@@ -11,19 +10,21 @@ server.connection({
 
 server.route({
 	method: 'GET',
-	path: '/{appId}',
+	path: '/',
 	handler: (req, reply) => {
-		let appId = req.params.appId
-		let lang = req.query.lang || 'en'
-		let url = `${URL}${appId}&h1=${lang}`
+		let url = 'http://devahoy.com/posts/scraping-web-with-nodejs'
 		request(url, (err, response, body) => {
 
 			if(!err && response.statusCode === 200) {
 				let $ = cheerio.load(body)
-				reply({})
+				let title = $('.title').text().trim()
+				reply({
+					title: title
+				})
+
 			} else {
 				reply({
-					message: `error on ${url}`
+					message: `error`
 				})
 			}
 
