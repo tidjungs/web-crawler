@@ -6,11 +6,17 @@ server.connection({
 	port: 9000
 })
 
+const URL = 'https://play.google.com/store/apps/details?id=';
 server.route({
 	method: 'GET',
 	path: '/{appId}',
 	handler: (req, reply) => {
-		reply({messege: 'Hello World'})
+		let appId = req.params.appId
+		let lang = req.query.lang || 'en'
+		let url = `${URL}${appId}&h1=${lang}`
+		reply({
+			url: url
+		})
 	}
 })
 
