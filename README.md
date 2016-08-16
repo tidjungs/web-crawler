@@ -13,7 +13,7 @@ node index.js
 ```
 
 #API
-appId for start web-crawler __
+appId for start web-crawler__
 You can find in google play store.
 ```
 http://localhost:9000/:appId
