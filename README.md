@@ -1,10 +1,10 @@
 # Web-crawler
 basic tutorial to web-crawler with nodejs
 #Library
-  nodejs \n
-  hapi
-  request
-  cheerio
+* nodejs 
+* hapi
+* request
+* cheerio
 #How to use
 ```
 npm install
