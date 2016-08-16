@@ -6,10 +6,18 @@ basic tutorial to web-crawler with nodejs
 * request
 * cheerio
  
-#How to use
+#Usage
 ```
 npm install
 node index.js
 ```
+
+#API
+appId for start web-crawler
+You can find in google play store.
+```
+http://localhost:9000/:appId
+```
+
 #Credit
 http://devahoy.com/posts/scraping-web-with-nodejs/
